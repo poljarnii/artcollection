@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ART Collection</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#002738;
+      --bronze:#957c5e;
+      --white:#ffffff;
+
+      /* from 1366×768 */
+      --logoTop:10.94vh;
+      --titleTop:48.70vh;
+      --emailTop:87.50vh;
+
+      --logoW:clamp(90px, 8.13vw, 160px);
+      --titleSize:clamp(22px, 2.30vw, 34px);
+      --emailSize:clamp(12px, 1.10vw, 18px);
+    }
+
+    html, body { height:100%; margin:0; }
+    body { background:var(--bg); overflow:hidden; }
+
+    .stage{
+      position:relative;
+      height:100vh;
+      width:100%;
+      min-height:520px;
+    }
+
+    .center{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      text-align:center;
+      width:min(92vw, 1200px);
+    }
+
+    .logoWrap{ top:var(--logoTop); }
+    .logo{
+      width:var(--logoW);
+      height:auto;
+      display:block;
+      margin:0 auto;
+      user-select:none;
+      -webkit-user-drag:none;
+    }
+
+    .title{
+      top:var(--titleTop);
+      font-family:"PT Serif", serif;
+      font-weight:400;
+      font-size:var(--titleSize);
+      line-height:1.25;
+      color:var(--white);
+      white-space:nowrap; /* desktop: single line */
+    }
+    .title span{ display:inline; } /* desktop: words in one line */
+
+    .email{
+      top:var(--emailTop);
+      font-family:"Source Sans 3","Source Sans Pro",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+      font-weight:400;
+      font-size:var(--emailSize);
+      line-height:1.2;
+      color:var(--bronze);
+      white-space:nowrap;
+    }
+
+    /* Keep layout graceful on narrower widths */
+    @media (max-width: 900px){
+      .email { white-space:normal; }
+    }
+
+    /* Mobile portrait: title stacked into 3 lines (each word on its own line) */
+    @media (max-width: 600px){
+      .title{
+        white-space:normal;
+        line-height:1.35;
+      }
+      .title span{
+        display:block; /* mobile: each word on new line */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="stage" aria-label="ART Collection. Девелопер коллекционной недвижимости">
+    <div class="center logoWrap">
+      <img
+        class="logo"
+        src="logo_art_collection_web.png"
+        alt="ART Collection"
+      >
+    </div>
+
+    <div class="center title">
+      <span>Девелопмент</span>
+      <span>коллекционной</span>
+      <span>недвижимости</span>
+    </div>
+
+    <div class="center email">artcollection.ru@gmail.com</div>
+  </main>
+</body>
+</html>
